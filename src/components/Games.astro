@@ -1,45 +1,137 @@
 ---
 import { games } from "../data/games";
+
+const base = import.meta.env.BASE_URL.replace(/\/$/, "");
 ---
 
 <section id="jeux" class="section">
   <h2><span class="idx">07</span> Jeux vidéos</h2>
   <div class="grid">
-    {games.map((g) => (
-      <article class="card">
-        <h3><a href={g.url} target="_blank" rel="noopener noreferrer">{g.title}</a></h3>
-        {g.note && <p>{g.note}</p>}
-      </article>
-    ))}
+    {games.map((g) =>
+      g.variants ? (
+        <details class="card">
+          <span class="bg" style={`background-image:url(${base}/img/games/${g.image})`}></span>
+          <summary>
+            <span class="title">{g.title}</span>
+            <span class="count">{g.variants.length} à découvrir</span>
+          </summary>
+          <ul class="variants">
+            {g.variants.map((v) => (
+              <li>
+                <a href={v.url} target="_blank" rel="noopener noreferrer">{v.title}</a>
+                {v.note && <em>{v.note}</em>}
+              </li>
+            ))}
+          </ul>
+        </details>
+      ) : (
+        <article class="card">
+          <span class="bg" style={`background-image:url(${base}/img/games/${g.image})`}></span>
+          <a class="solo" href={g.url} target="_blank" rel="noopener noreferrer">
+            <span class="title">{g.title}</span>
+          </a>
+        </article>
+      )
+    )}
   </div>
 </section>
 
 <style>
   .grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
     gap: 1rem;
   }
 
   .card {
+    position: relative;
+    overflow: hidden;
     background: var(--bg-alt);
     border: 1px solid var(--border);
-    border-radius: 10px;
-    padding: 1.1rem 1.2rem;
+    border-radius: 12px;
     transition: border-color 0.2s ease;
   }
   .card:hover { border-color: var(--accent); }
 
-  .card h3 {
-    margin: 0;
-    font-size: 0.98rem;
+  .bg {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    opacity: 0.3;
+    transition: opacity 0.25s ease, transform 0.35s ease;
   }
-  .card h3 a { color: var(--fg); }
-  .card h3 a:hover { color: var(--accent); text-decoration: none; }
+  .card:hover .bg { opacity: 0.45; transform: scale(1.04); }
 
-  .card p {
+  /* Voile assurant la lisibilité du texte par-dessus l'image */
+  .card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      to top,
+      rgba(11, 13, 16, 0.95),
+      rgba(11, 13, 16, 0.55)
+    );
+    pointer-events: none;
+  }
+
+  summary,
+  .solo {
+    position: relative;
+    z-index: 1;
+    display: block;
+    padding: 1.6rem 1.2rem 1.2rem;
+    cursor: pointer;
+    color: var(--fg);
+  }
+  summary { list-style: none; }
+  summary::-webkit-details-marker { display: none; }
+  .solo:hover { text-decoration: none; color: var(--accent); }
+
+  .title {
+    display: block;
+    font-size: 1.02rem;
+    font-weight: 700;
+  }
+
+  .count {
+    display: inline-block;
+    margin-top: 0.35rem;
+    font-family: var(--mono);
+    font-size: 0.72rem;
+    color: var(--accent);
+  }
+  details[open] .count::after { content: " ▾"; }
+  details:not([open]) .count::after { content: " ▸"; }
+
+  .variants {
+    position: relative;
+    z-index: 1;
+    list-style: none;
+    margin: 0;
+    padding: 0 1.2rem 1.2rem;
+    display: grid;
+    gap: 0.5rem;
+  }
+
+  .variants li {
+    display: flex;
+    flex-direction: column;
+    gap: 0.1rem;
+  }
+
+  .variants a {
+    font-family: var(--mono);
+    font-size: 0.82rem;
     color: var(--fg-dim);
-    font-size: 0.85rem;
-    margin: 0.5rem 0 0;
+  }
+  .variants a:hover { color: var(--accent); text-decoration: none; }
+
+  .variants em {
+    font-style: normal;
+    font-size: 0.74rem;
+    color: var(--fg-dim);
+    opacity: 0.75;
   }
 </style>

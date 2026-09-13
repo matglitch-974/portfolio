@@ -1,23 +1,47 @@
-export interface GameItem {
+export interface GameVariant {
   title: string;
   url: string;
   note?: string;
 }
 
-const steam = (title: string): string =>
-  `https://store.steampowered.com/search/?term=${encodeURIComponent(title)}`;
+export interface GameItem {
+  title: string;
+  url: string;
+  /** Image de fond, dans public/img/games/ */
+  image: string;
+  /** Déclinaisons révélées au clic sur la carte. */
+  variants?: GameVariant[];
+}
+
+const steam = (id: number): string => `https://store.steampowered.com/app/${id}/`;
 
 export const games: GameItem[] = [
   {
     title: "Minecraft",
     url: "https://www.minecraft.net",
-    note: "dont Prism Craft et 4D Miner côté mods joués, et deux projets perso en cours : minecraft-og et Carbone (mod-loader en développement)",
+    image: "minecraft.jpg",
+    variants: [
+      { title: "4D Miner", url: steam(1941640), note: "le bac à sable poussé en quatre dimensions" },
+      { title: "Prism Craft", url: "https://www.google.com/search?q=Prism+Craft+Minecraft" },
+      { title: "minecraft-og", url: "https://github.com/matglitch-974", note: "mon projet perso" },
+      { title: "Carbone", url: "https://github.com/matglitch-974", note: "mon mod-loader, en développement" },
+    ],
   },
-  { title: "Portal", url: steam("Portal") },
-  { title: "Portal 2", url: steam("Portal 2") },
-  { title: "Portal Reloaded", url: steam("Portal Reloaded") },
-  { title: "Portal with RTX", url: steam("Portal with RTX") },
-  { title: "The Stanley Parable", url: steam("The Stanley Parable") },
-  { title: "Detroit: Become Human", url: steam("Detroit Become Human") },
-  { title: "Viewfinder", url: steam("Viewfinder") },
+  {
+    title: "Portal",
+    url: steam(400),
+    image: "portal2.jpg",
+    variants: [
+      { title: "Portal", url: steam(400) },
+      { title: "Portal 2", url: steam(620) },
+      { title: "Portal Reloaded", url: steam(1255980) },
+      { title: "Portal with RTX", url: steam(2012840) },
+    ],
+  },
+  { title: "The Stanley Parable", url: steam(1703340), image: "stanley-parable.jpg" },
+  { title: "Detroit: Become Human", url: steam(1222140), image: "detroit.jpg" },
+  { title: "Viewfinder", url: steam(1382070), image: "viewfinder.jpg" },
+  { title: "Superliminal", url: steam(1049410), image: "superliminal.jpg" },
+  { title: "Blue Prince", url: steam(1569580), image: "blue-prince.jpg" },
+  { title: "SC2KRender", url: steam(1527140), image: "sc2krender.jpg" },
 ];
