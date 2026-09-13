@@ -1,0 +1,45 @@
+---
+import { games } from "../data/games";
+---
+
+<section id="jeux" class="section">
+  <h2><span class="idx">07</span> Jeux vidéo</h2>
+  <div class="grid">
+    {games.map((g) => (
+      <article class="card">
+        <h3><a href={g.url} target="_blank" rel="noopener noreferrer">{g.title}</a></h3>
+        {g.note && <p>{g.note}</p>}
+      </article>
+    ))}
+  </div>
+</section>
+
+<style>
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1rem;
+  }
+
+  .card {
+    background: var(--bg-alt);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 1.1rem 1.2rem;
+    transition: border-color 0.2s ease;
+  }
+  .card:hover { border-color: var(--accent); }
+
+  .card h3 {
+    margin: 0;
+    font-size: 0.98rem;
+  }
+  .card h3 a { color: var(--fg); }
+  .card h3 a:hover { color: var(--accent); text-decoration: none; }
+
+  .card p {
+    color: var(--fg-dim);
+    font-size: 0.85rem;
+    margin: 0.5rem 0 0;
+  }
+</style>
