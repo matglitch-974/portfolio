@@ -1,0 +1,58 @@
+---
+const steps = [
+  { name: "Collecte", detail: "agrégation multi-sources (chaînes YouTube spécialisées, releases, papiers)" },
+  { name: "Tri", detail: "filtrage par pertinence et déduplication" },
+  { name: "Synthèse", detail: "bilan structuré généré par agent IA" },
+  { name: "Restitution", detail: "rapport périodique prêt à consulter" },
+];
+---
+
+<section id="veille" class="section">
+  <h2><span class="idx">02</span> Veille IA — pipeline automatisé</h2>
+  <div class="prose">
+    <p>
+      La veille sur l'actualité IA n'est pas passive : elle repose sur un
+      pipeline d'agents dédiés qui collectent, trient et synthétisent les
+      sorties, papiers et annonces du secteur en bilans réguliers exploitables
+      — plutôt que de la lecture éparpillée sur des dizaines de sources.
+    </p>
+  </div>
+  <ul class="pipeline">
+    {steps.map((step) => (
+      <li>
+        <span class="step">{step.name}</span>
+        {step.detail}
+      </li>
+    ))}
+  </ul>
+</section>
+
+<style>
+  .pipeline {
+    list-style: none;
+    margin: 2rem 0 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1rem;
+  }
+
+  .pipeline li {
+    background: var(--bg-alt);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 1.1rem 1.2rem;
+    color: var(--fg-dim);
+    font-size: 0.92rem;
+  }
+
+  .pipeline .step {
+    display: block;
+    font-family: var(--mono);
+    color: var(--accent);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-bottom: 0.4rem;
+  }
+</style>
