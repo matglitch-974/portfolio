@@ -21,10 +21,10 @@ export const games: GameItem[] = [
     url: "https://www.minecraft.net",
     image: "minecraft.jpg",
     variants: [
-      { title: "4D Miner", url: steam(1941640), note: "le bac à sable poussé en quatre dimensions" },
-      { title: "Prism Craft", url: "https://www.google.com/search?q=Prism+Craft+Minecraft" },
-      { title: "minecraft-og", url: "https://github.com/matglitch-974", note: "mon projet perso" },
-      { title: "Carbone", url: "https://github.com/matglitch-974", note: "mon mod-loader, en développement" },
+      { title: "4D Miner", url: steam(1941640), note: "bac à sable en quatre dimensions" },
+      { title: "Prism Craft", url: "https://lairhisson.itch.io/prismcraft" },
+      { title: "minecraft-og", url: "https://github.com/matglitch-974", note: "projet personnel" },
+      { title: "Carbone", url: "https://github.com/matglitch-974", note: "chargeur de mods, en développement" },
     ],
   },
   {

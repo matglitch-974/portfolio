@@ -18,7 +18,9 @@ export const channels: Channel[] = [
   { name: "EGO", handle: "ego_one", pic: "ego_one.jpg" },
   { name: "Fuzay au Carré", handle: "FuzayAuCarre", pic: "FuzayAuCarre.jpg" },
   { name: "Underscore_", handle: "Underscore_", pic: "Underscore_.jpg" },
-  { name: "overfl-0-w", handle: "overfl-0-w", pic: "overfl-0-w.jpg" },
+  { name: "0verflow", handle: "overfl-0-w", pic: "overfl-0-w.jpg" },
+  { name: "V2F", handle: "V2F", pic: "V2F.jpg" },
+  { name: "TRY", handle: "JusteTRY", pic: "JusteTRY.jpg" },
   { name: "VisionIA-FR", handle: "VisionIA-FR", pic: "VisionIA-FR.jpg" },
   { name: "BarthH95", handle: "BarthH95", pic: "BarthH95.jpg" },
   { name: "melvynxdev", handle: "melvynxdev", pic: "melvynxdev.jpg" },
@@ -32,7 +34,4 @@ export const channels: Channel[] = [
   { name: "Korben", handle: "korben", pic: "korben.jpg" },
   { name: "KAPPA Studio", handle: "KAPPA-Studio", pic: "KAPPA-Studio.jpg" },
   { name: "French Hardware" },
-  { name: "V2F" },
-  { name: "0verflow" },
-  { name: "TRY" },
 ];

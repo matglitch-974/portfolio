@@ -7,29 +7,29 @@ export interface Project {
 
 export const projects: Project[] = [
   {
-    title: "XEOS — OS Linux universel",
+    title: "XEOS — système d'exploitation Linux universel",
     description:
-      "Mon système d'exploitation, pensé pour tourner partout : VR, PC, ARM64, TV, IoT. La v3.7.0 démarre pour de vrai — image ISO validée en machine virtuelle, init maison en PID 1, 95 pilotes chargés, et une interface graphique écrite de zéro en DRM/KMS. Le tout en Rust, sans la moindre dépendance externe, et fabriqué intégralement depuis Windows. Devise : « le futur c'est l'opti ».",
-    tags: ["Rust", "Linux", "Bas niveau", "VR / IoT"],
+      "Système d'exploitation conçu pour une exécution multiplateforme : VR, PC, ARM64, téléviseurs et objets connectés. La version 3.7.0 démarre de manière autonome — image ISO validée en machine virtuelle, processus d'initialisation propriétaire en PID 1, 95 pilotes chargés et interface graphique développée intégralement en DRM/KMS. Écrit en Rust sans dépendance externe, avec une chaîne de fabrication fonctionnant entièrement sous Windows.",
+    tags: ["Rust", "Linux", "Systèmes bas niveau", "VR / IoT"],
     featured: true,
   },
   {
-    title: "Interface Windows réinventée — Liquid Glass",
+    title: "Interface Windows unifiée — Liquid Glass",
     description:
-      "Deux méga-mods Windhawk maison qui unifient Windows 11 en une seule interface cohérente et futuriste : Liquid Glass partout, et une barre des tâches transformée en dock Dynamic Island qui lit les vraies épingles du système. Du Direct2D, du vrai hook système, et un design pensé comme un tout.",
-    tags: ["C++", "Direct2D", "UI/UX", "Windhawk"],
+      "Deux modules Windhawk développés sur mesure, unifiant Windows 11 en une interface cohérente : traitement Liquid Glass généralisé et barre des tâches repensée en dock Dynamic Island, synchronisé avec les épingles natives du système. Rendu en Direct2D et interception au niveau système.",
+    tags: ["C++", "Direct2D", "Interface", "Windhawk"],
     featured: true,
   },
   {
-    title: "b3dva — serveur Minecraft crossplay",
+    title: "b3dva — serveur Minecraft multiplateforme",
     description:
-      "Un serveur survie qui réunit Java et Bedrock sur une même adresse : Paper 26.2, Geyser et Floodgate pour le pont entre plateformes, et une pile Via complète qui couvre Minecraft Java 1.7 jusqu'à 26.2 et Bedrock v26.0 à v26.40. TPS à 20, avec un bot qui tourne en permanence dessus.",
-    tags: ["Minecraft", "Paper", "Crossplay", "Bots"],
+      "Serveur de survie réunissant les éditions Java et Bedrock sur une adresse unique : socle Paper 26.2, passerelle Geyser et Floodgate, et pile Via assurant la compatibilité de Minecraft Java 1.7 à 26.2 ainsi que Bedrock v26.0 à v26.40. Performances stables à 20 TPS, avec un bot en service continu.",
+    tags: ["Minecraft", "Paper", "Multiplateforme", "Bots"],
   },
   {
     title: "Neuro-transmetteur flexible",
     description:
-      "Théorisation d'un modèle de neuro-transmetteur complet et flexible. Le travail de conception avance, avec une publication prévue sur GitHub.",
-    tags: ["Recherche", "Théorie", "À publier"],
+      "Travaux de modélisation d'un neuro-transmetteur complet et flexible. La conception se poursuit, avec une publication prévue sur GitHub.",
+    tags: ["Recherche", "Modélisation", "Publication à venir"],
   },
 ];
