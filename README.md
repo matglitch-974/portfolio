@@ -2,7 +2,7 @@
 
 **→ [Voir le site en ligne](https://matglitch-974.github.io/portfolio/)**
 
-Site personnel statique, construit avec [Astro](https://astro.build). Aucun framework client, aucune dépendance à un éditeur visuel — contrôle total du code, déploiement automatique sur GitHub Pages à chaque push.
+portflio personnel, construit avec [Astro](https://astro.build).
 
 ## Structure
 
