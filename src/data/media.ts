@@ -3,21 +3,52 @@ export interface MediaItem {
   url: string;
 }
 
-const justwatch = (title: string): string =>
-  `https://www.justwatch.com/fr/recherche?q=${encodeURIComponent(title)}`;
+export interface MediaGroup {
+  title: string;
+  items: MediaItem[];
+  /** Sous-catégories affichées à la suite des titres du groupe. */
+  subgroups?: MediaGroup[];
+}
+
+/** `query` : terme de recherche JustWatch, quand il diffère du titre affiché. */
+const justwatch = (title: string, query: string = title): MediaItem => ({
+  title,
+  url: `https://www.justwatch.com/fr/recherche?q=${encodeURIComponent(query)}`,
+});
 
 export const movies: MediaItem[] = [
-  { title: "Black Mirror", url: justwatch("Black Mirror") },
-  { title: "Rick et Morty", url: justwatch("Rick et Morty") },
-  { title: "Ready Player One", url: justwatch("Ready Player One") },
-  { title: "Star Wars (saga)", url: justwatch("Star Wars") },
-  { title: "The Big Bang Theory", url: justwatch("The Big Bang Theory") },
-  { title: "Interstellar", url: justwatch("Interstellar") },
-  { title: "Dune", url: justwatch("Dune") },
-  { title: "Snowden", url: justwatch("Snowden") },
-  { title: "Terminator (saga)", url: justwatch("Terminator") },
-  { title: "Retour vers le futur (saga)", url: justwatch("Retour vers le futur") },
-  { title: "Her", url: justwatch("Her") },
-  { title: "Les Nouveaux Héros", url: justwatch("Les Nouveaux Héros") },
-  { title: "Fondation", url: justwatch("Fondation") },
+  justwatch("Black Mirror"),
+  justwatch("Rick et Morty"),
+  justwatch("Ready Player One"),
+  justwatch("Star Wars (saga)", "Star Wars"),
+  justwatch("The Big Bang Theory"),
+  justwatch("Interstellar"),
+  justwatch("The Truman Show"),
+  justwatch("Edward Snowden", "Snowden"),
+  justwatch("Terminator (saga)", "Terminator"),
+  justwatch("Retour vers le futur (saga)", "Retour vers le futur"),
+  justwatch("Her"),
+  justwatch("Les Nouveaux Héros"),
+  justwatch("Fondation"),
+];
+
+export const mediaGroups: MediaGroup[] = [
+  {
+    title: "Les de Funès",
+    items: [
+      justwatch("La Soupe aux choux"),
+      justwatch("Le Grand Restaurant"),
+      justwatch("Le Corniaud"),
+      justwatch("L'Avare"),
+    ],
+    subgroups: [
+      {
+        title: "Le Gendarme",
+        items: [
+          justwatch("Le Gendarme de Saint-Tropez"),
+          justwatch("Le Gendarme et les Gendarmettes"),
+        ],
+      },
+    ],
+  },
 ];

@@ -9,7 +9,7 @@ export const projects: Project[] = [
   {
     title: "XEOS — système d'exploitation Linux universel",
     description:
-      "Système d'exploitation conçu pour une exécution multiplateforme : VR, PC, ARM64, téléviseurs et objets connectés. La version 3.7.0 démarre de manière autonome — image ISO validée en machine virtuelle, processus d'initialisation propriétaire en PID 1, 95 pilotes chargés et interface graphique développée intégralement en DRM/KMS. Écrit en Rust sans dépendance externe, avec une chaîne de fabrication fonctionnant entièrement sous Windows.",
+      "Système d'exploitation conçu pour une exécution multiplateforme : VR, PC, ARM64, téléviseurs et objets connectés. La version 3.8.4 s'installe sur disque et démarre de manière autonome, en BIOS comme en UEFI : installateur écrivant lui-même la table de partitions GPT, processus d'initialisation propriétaire en PID 1, 95 pilotes chargés et interface graphique développée intégralement en DRM/KMS. Écrit en Rust sans dépendance externe, avec une chaîne de fabrication fonctionnant entièrement sous Windows.",
     tags: ["Rust", "Linux", "Systèmes bas niveau", "VR / IoT"],
     featured: true,
   },

@@ -16,19 +16,6 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, "");
   </div>
 
   <ul class="chips">
-    <li>
-      <a class="chip chip-x" href="https://x.com/matglitch974" target="_blank" rel="noopener noreferrer">
-        <img
-          class="pic"
-          src={`${base}/img/avatars/x-matglitch974.jpg`}
-          alt="Photo de profil de matglitch974 sur X"
-          loading="lazy"
-          width="30"
-          height="30"
-        />
-        <span>@matglitch974</span>
-      </a>
-    </li>
     {channels.map((c) => (
       <li>
         <a class="chip" href={channelUrl(c)} target="_blank" rel="noopener noreferrer">
@@ -77,12 +64,6 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, "");
     color: var(--accent);
     border-color: var(--accent);
     text-decoration: none;
-  }
-
-  .chip-x {
-    color: var(--fg);
-    border-color: var(--accent-dim);
-    background: var(--bg-alt);
   }
 
   .pic {
