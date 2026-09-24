@@ -40,6 +40,7 @@ export const mediaGroups: MediaGroup[] = [
       justwatch("Le Grand Restaurant"),
       justwatch("Le Corniaud"),
       justwatch("L'Avare"),
+      justwatch("L'Aile ou la Cuisse"),
     ],
     subgroups: [
       {

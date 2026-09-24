@@ -2,7 +2,7 @@
 
 **→ [Voir le site en ligne](https://matglitch-974.github.io/portfolio/)**
 
-portflio personnel, construit avec [Astro](https://astro.build).
+Portfolio personnel, construit avec [Astro](https://astro.build).
 
 ## Structure
 
