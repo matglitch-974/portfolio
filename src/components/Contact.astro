@@ -4,6 +4,16 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, "");
 
 <section id="coordonnees" class="section">
   <h2><span class="idx">08</span> Coordonnées</h2>
+  <div class="contacts">
+  <a class="contact" href="mailto:matglitch974@gmail.com">
+    <span class="icon" aria-hidden="true">
+      <svg viewBox="0 0 24 24"><path d="M3 6.5h18v11H3z M3 7l9 6.5L21 7" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" /></svg>
+    </span>
+    <span class="text">
+      <span class="label">E-mail</span>
+      <span class="handle">matglitch974@gmail.com</span>
+    </span>
+  </a>
   <a class="contact" href="https://x.com/matglitch974" target="_blank" rel="noopener noreferrer">
     <img
       src={`${base}/img/avatars/x-matglitch974.jpg`}
@@ -18,9 +28,24 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, "");
     </span>
     <span class="arrow" aria-hidden="true">↗</span>
   </a>
+  </div>
 </section>
 
 <style>
+  .contacts { display: flex; flex-wrap: wrap; gap: 1rem; }
+
+  .icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: var(--accent-dim);
+    color: var(--accent);
+  }
+  .icon svg { width: 22px; height: 22px; }
+
   .contact {
     display: inline-flex;
     align-items: center;
@@ -51,7 +76,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, "");
     color: var(--fg-dim);
   }
 
-  .handle { font-family: var(--mono); font-size: 1rem; }
+  .handle { font-family: var(--mono); font-size: 1rem; overflow-wrap: anywhere; }
 
   .arrow {
     margin-left: 0.75rem;
